@@ -1,0 +1,51 @@
+
+p{
+    color: #c3e5e7;
+}
+
+div.view{
+    background-color: #699FA1;
+}
+
+div.upload{
+    background-color: #A5D6D9;
+}
+
+div.how{
+    background-color: #DF7027;
+}
+
+div.about{
+    background-color: #DD8627;
+}
+
+div.button{
+    width: 63vw;
+    height: 16vh;
+    margin: 2vw auto 0 auto;
+    -ms-transform: skewY(-7deg); /* IE 9 */
+    -webkit-transform: skewY(-7deg); /* Safari 3-8 */
+    transform: skewY(-7deg);  
+    text-align: center;
+    font-size: 5em;
+}
+
+div.button:hover{
+    background-color: #5d5c58; 
+    color: #C3E5E7;
+}
+
+a.div{
+    text-decoration:none;
+    color: #FFFFFF;
+}
+a:hover{
+    text-decoration:none;
+    color: #FFFFFF;
+}
+
+@media (max-width: 770px) {
+    div.button{
+        width: 68vw;
+    }
+}

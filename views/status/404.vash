@@ -1,1 +1,14 @@
-<p>404 dude</p>
+@html.extend('shared/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        @{
+            model.title = "404";
+        }
+        
+        <p>404 dude</p>
+    })
+
+})
+
+
