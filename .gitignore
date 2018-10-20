@@ -1,5 +1,6 @@
 node_modules
 public/uploads
+public/javascript/*
 .DS_Store
 *.c
 *.cpp

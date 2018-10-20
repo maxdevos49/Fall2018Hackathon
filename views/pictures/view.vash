@@ -13,36 +13,13 @@
         </style>
         <div class="container">
             <h3 class="mt-5" >View Photos</h3>
-            <div class="py-5">
-                <div class="container">
-                    <div class="row">
-                        @model.photos.forEach(function(img){
-                            <div class="col-md-3">
-                                <div class="card mb-2 shadow-sm">
-                                    <img class="card-img-top" src="@img.fileName" data-holder-rendered="true">
-                                    <div class="card-body">
-                                    <h5 class="card-title">@img.origFileName</h5>
-                                    <small class="text-muted">Album: @img.album</small><br/>
-                                    <small class="text-muted">Tags:</small>
-                                        <div class="btn-group">
-                                            @img.tag.forEach((item)=>{
-                                                <div class="alert alert-secondary tags">@item</div>
-                                            })
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        })
-                    </div>
-                </div>
-            </div>
+            <div id="root"><p style="color: #ff0000;">Loading...</p></div>
         </div>
 
+        <script crossorigin src="https://unpkg.com/react@@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
         <script src="/socket.io/socket.io.js" crossorigin="anonymous"></script>
-        <script>
-            var socket = io();
-            socket.on('m', function(m){console.log(m);})
-        </script>
+        <script src="/javascript/view.js" crossorigin="anonymous"></script>
 
     })
 
