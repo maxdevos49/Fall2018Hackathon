@@ -1,14 +1,4 @@
-<<<<<<< HEAD
 module.exports = function api(io){
-=======
-module.exports = function apis(io){
-
-const express = require('express');
-const api = express.Router();
-const formidable = require('formidable');
-const pictureModel = require("../models/pictureModel.js");
-const util = require("util");
->>>>>>> 7a014ad16d9c2a85a10d756c9701f4c85888d76d
 
     const express = require('express');
     const api = express.Router();
@@ -16,11 +6,8 @@ const util = require("util");
     const pictureModel = require("../models/pictureModel.js");
     const util = require("util");
 
-<<<<<<< HEAD
     const config = require("../config.js");
 
-=======
->>>>>>> 7a014ad16d9c2a85a10d756c9701f4c85888d76d
     api.get("/", (req,res) => {
         res.json({
             "name":config.name,
