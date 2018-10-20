@@ -86,7 +86,7 @@
         <h1>Home Page</h1>
 
         <p>This is the home page!!</p>
-        <a href="">
+        <a href="/pictures/view.html">
             <div class="view button">VIEW</div>
         </a>
 
