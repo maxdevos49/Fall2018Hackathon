@@ -39,4 +39,12 @@ api.post("/upload", (req, res) => {
     res.redirect("/pictures/upload.html");
 });
 
+api.get("/photos", (req,res) => {
+    pictureModel.find((err, data) => {
+        if (err) throw err;
+
+        res.json(data);
+    });
+});
+
 module.exports = api;
