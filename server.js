@@ -16,7 +16,7 @@ io.on('connection', function(socket){
     console.log('a user connected');
 })
 
-app.use('/', routes);
+app.use('/', routes(io));
 
 //start the server
 server.listen(PORT, function () {

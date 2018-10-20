@@ -1,3 +1,5 @@
+module.exports = function apis(io){
+
 const express = require('express');
 const api = express.Router();
 const formidable = require('formidable');
@@ -5,8 +7,6 @@ const pictureModel = require("../models/pictureModel.js");
 const util = require("util");
 
 const config = require("../config.js");
-
-module.exports = function api(io){
 
     api.get("/", (req,res) => {
         res.json({

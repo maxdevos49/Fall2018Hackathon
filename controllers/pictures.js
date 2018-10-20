@@ -1,3 +1,5 @@
+module.exports = function routes(io){
+
 const express = require('express');
 const router = express.Router();
 const pictureModel = require('../models/pictureModel');
@@ -22,5 +24,5 @@ router.get("/view.html", (req, res) => {
         res.render("pictures/view", model);
     });
 });
-
-module.exports = router;
+return router;
+}
