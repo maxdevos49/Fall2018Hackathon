@@ -1,12 +1,12 @@
-const express = require('express');
-const api = express.Router();
-const formidable = require('formidable');
-const pictureModel = require("../models/pictureModel.js");
-const util = require("util");
-
-const config = require("../config.js");
-
 module.exports = function api(io){
+
+    const express = require('express');
+    const api = express.Router();
+    const formidable = require('formidable');
+    const pictureModel = require("../models/pictureModel.js");
+    const util = require("util");
+
+    const config = require("../config.js");
 
     api.get("/", (req,res) => {
         res.json({
@@ -54,7 +54,7 @@ module.exports = function api(io){
 
                 picture.save((err) => {
                     if (err) throw err;
-                    
+
                 });
 
             });
