@@ -5,14 +5,27 @@
         @{
             model.title = "Upload";
         }
+
+        <link rel="stylesheet" href="/css/tags.css">
         
         <h3>Upload Page</h3>
 
         <form method="POST" enctype="multipart/form-data" action="/api/upload">
-            <input name="album" type="text">
+
+            <label>Files</label>
             <input name="files" type="file" multiple>
+            <br/>
+            <label>Album Name</label>
+            <input name="album" type="text">
+            <br/>
+            <label>Tags</label>
+            <div class="tags-input" data-name="tags-input"></div>
+            <br/>
             <input type="submit">
+
         </form>
+
+    <script src="/javascript/tags.js"></script>
 
     })
 
