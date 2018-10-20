@@ -87,10 +87,10 @@
             color: #FFFFFF;
         }
         </style>
-        <h1>INSERT_NAME_HERE</h1>
+        <h1><b>INSERT_NAME_HERE</b></h1>
 
-        <p>This is the home page!!</p>
-        <a href="/pictures/view.html" title="View and search your pictures here!" title2="2">
+        <p></p>
+        <a href="/pictures/view.html" title="View and search your pictures here!">
             <div class="view button">VIEW</div>
         </a>
 
