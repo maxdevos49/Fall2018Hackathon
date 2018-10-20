@@ -10,24 +10,24 @@
     
         <div class="container">
 
-            <a href="/pictures/view.html" title="View and search your pictures here!" title2="2">
+            <a class="links" href="/pictures/view.html" title="View and search your pictures here!" title2="2">
                 <div class="view button">
-                    <p>VIEW</p>
+                    VIEW
                 </div>
             </a>
-            <a href="/pictures/upload.html" title="Upload all of your photos here!">
+            <a class="links" href="/pictures/upload.html" title="Upload all of your photos here!">
                 <div class="upload button">
-                    <p>UPLOAD</p>
+                    UPLOAD
                 </div>
             </a>
-            <a href="/how.html" title="How does INSERT_NAME_HERE work? Click to find out!">
+            <a class="links" href="/how.html" title="How does INSERT_NAME_HERE work? Click to find out!">
                 <div class="how button">
-                    <p>HOW</p>
+                    HOW
                 </div>
             </a>
-            <a href="/about.html" title="Who made this app and why? Those questions can be answered here!">
+            <a class="links" href="/about.html" title="Who made this app and why? Those questions can be answered here!">
                 <div class="about button">
-                    <p>ABOUT</p>
+                    ABOUT
                 </div>
             </a>
 

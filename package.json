@@ -24,6 +24,7 @@
     "mongoose": "*",
     "node": "8.11.1",
     "nodemon": "*",
+    "socket.io": "^2.1.1",
     "vash": "^0.12.4"
   }
 }
