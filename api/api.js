@@ -39,7 +39,7 @@ api.post("/upload", (req, res) => {
             let fileName = (file.path.substring(config.path.length + "/public".length, file.path.length));
             let album = fields.album;
             let tags;
-            if(typeof(fields["tags-input"])  != undefined){
+            if(typeof(fields["tags-input"]) != "undefined"){
                 tags = fields["tags-input"].split(",");
             }
             
