@@ -1,0 +1,19 @@
+{
+  "name": "fall2018hackathon",
+  "version": "1.0.0",
+  "description": "Fall Project!!!!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maxdevos49/Fall2018Hackathon.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maxdevos49/Fall2018Hackathon/issues"
+  },
+  "homepage": "https://github.com/maxdevos49/Fall2018Hackathon#readme"
+}
