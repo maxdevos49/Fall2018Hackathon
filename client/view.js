@@ -42,8 +42,15 @@ const Http = new XMLHttpRequest();
 const url='/api/photos';
 Http.open("GET", url);
 Http.send();
-Http.onreadystatechange=(e)=>{
-  let photos = JSON.parse(Http.responseText);
-  
+let photos = [];
+Http.onload=(e)=>{
+  photos = JSON.parse(Http.responseText);
+
   ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
+
+  var socket = io('http://localhost:8080');
+  socket.on('new', function (photo) {
+    photos.push(photo);
+    ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
+  });
 }

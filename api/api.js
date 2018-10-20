@@ -44,17 +44,19 @@ module.exports = function api(io){
                 if(typeof(fields["tags-input"]) != "undefined"){
                     tags = fields["tags-input"].split(",");
                 }
-                
-                let picture = new pictureModel({
+
+                let picture = {
                     origFileName: origFileName,
                     fileName: fileName,
                     album: album,
                     tag: tags
-                });
+                }
 
-                picture.save((err) => {
+                let picturem = new pictureModel(picture);
+
+                picturem.save((err) => {
                     if (err) throw err;
-
+                    io.emit('new', picture);
                 });
 
             });
