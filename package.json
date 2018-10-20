@@ -4,7 +4,7 @@
   "description": "Fall Project!!!!",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,15 @@
   "bugs": {
     "url": "https://github.com/maxdevos49/Fall2018Hackathon/issues"
   },
-  "homepage": "https://github.com/maxdevos49/Fall2018Hackathon#readme"
+  "homepage": "https://github.com/maxdevos49/Fall2018Hackathon#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "node": "8.11.1",
+    "cookie-parser": "^1.4.3",
+    "ip": "*",
+    "mongodb": "*",
+    "mongoose": "*",
+    "nodemon": "*",
+    "vash": "^0.12.4"
+  }
 }

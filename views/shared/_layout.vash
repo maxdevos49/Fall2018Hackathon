@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>@model.title | Fall Hackathon 2018</title>
+    </head>
+    <body>
+
+        <header>
+            <!-- This is where all links for the header should end up -->
+            header here
+        </header>
+        <!-- This is the body where each indevidual view is -->
+        @html.block('content')
+
+        <footer>
+            <!-- This is where the footer stuff should go -->
+            footer here
+        </footer>
+
+    </body>
+</html>
