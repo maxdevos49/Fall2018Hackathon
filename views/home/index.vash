@@ -5,11 +5,96 @@
         @{
             model.title = "Home";
         }
+        <style>
+        body {
+            height: 100vh;
+            background-color: #A5D6D9;
+            background-image: linear-gradient(-20deg,#A5D6D9 50%, rgb(255, 191, 138) 50%);
+            background-repeat:no-repeat;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+        }
+        h1   {
+            color: #0000ff;
+            /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif*/
+            text-align: center
+        }
+        p       {
+            color: rgb(59, 58, 58);
+        }
+        div.view{
+                /*width: 150px;
+                height: 80px;*/
+                width: 80vw;
+                height: 20vh;
+                background-color: yellow;
+                -ms-transform: skewY(-20deg); /* IE 9 */
+                -webkit-transform: skewY(-20deg); /* Safari 3-8 */
+                transform: skewY(-20deg);
+                align:center;
+        }
+        div.view:hover{background-color: green;}
         
-        <h3>Home Page</h3>
+        div.upload{
+                /*width: 150px;
+                height: 80px;*/
+                width: 80vw;
+                height: 20vh;
+                background-color: yellow;
+                -ms-transform: skewY(-20deg); /* IE 9 */
+                -webkit-transform: skewY(-20deg); /* Safari 3-8 */
+                transform: skewY(-20deg); 
+        }
+        div.upload:hover{background-color: green;}
+
+        div.how{
+                /*width: 150px;
+                height: 80px;*/
+                width: 80vw;
+                height: 20vh;
+                background-color: yellow;
+                -ms-transform: skewY(-20deg); /* IE 9 */
+                -webkit-transform: skewY(-20deg); /* Safari 3-8 */
+                transform: skewY(-20deg); 
+        }
+        div.how:hover{background-color: green;}
+
+        div.about{
+                /*width: 150px;
+                height: 80px;*/
+                width: 80vw;
+                height: 20vh;
+                background-color: yellow;
+                -ms-transform: skewY(-20deg); /* IE 9 */
+                -webkit-transform: skewY(-20deg); /* Safari 3-8 */
+                transform: skewY(-20deg); 
+        }
+        div.about:hover{background-color: green;}
+
+        .button{
+            margin-top:2vh;
+            margin-bottom:2vh;
+            align:center;
+        }
+        </style>
+        <h1>Home Page</h1>
 
         <p>This is the home page!!</p>
+        <a href="">
+            <div class="view button">Test</div>
+        </a>
 
+        <a href="">
+            <div class="upload button">Test</div>
+        </a>
+
+        <a href="">
+            <div class="how button">Test</div>
+        </a>
+
+        <a href="">
+            <div class="about button">Test</div>
+        </a>
+        
     })
 
 })
