@@ -9,6 +9,7 @@ const config = require('./config.js');
 
 //Document Routes
 const ROUTES_home = require("./controllers/home.js");
+const ROUTES_picture = require("./controllers/pictures.js");
 
 //api routes
 const API_index = require("./api/api.js");
@@ -24,6 +25,7 @@ router.use(bodyParser.json());
 
 //use document routes
 router.use('/', ROUTES_home);
+router.use('/pictures/', ROUTES_picture);
 
 //use api routes
 router.use("/api", API_index);
@@ -40,7 +42,7 @@ router.use('/api', (req,res) => {
 router.use('/', (req,res) => {
 
     res.status(404);
-    res.render("status/404", req.decoded);
+    res.render("status/404");
 
 });
 

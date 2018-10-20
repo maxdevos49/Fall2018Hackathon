@@ -18,11 +18,11 @@
   "homepage": "https://github.com/maxdevos49/Fall2018Hackathon#readme",
   "dependencies": {
     "express": "^4.16.4",
-    "node": "8.11.1",
-    "cookie-parser": "^1.4.3",
+    "formidable": "^1.2.1",
     "ip": "*",
     "mongodb": "*",
     "mongoose": "*",
+    "node": "8.11.1",
     "nodemon": "*",
     "vash": "^0.12.4"
   }
