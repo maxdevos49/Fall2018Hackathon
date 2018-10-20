@@ -10,6 +10,15 @@ nav{
     margin-bottom: 8vh;
 }
 
+.logoHome{
+    height: 5vh;
+    position: relative;
+    z-index: 101;
+}
+
+.logoArea{
+    white-space: nowrap;
+}
 #footer{
     padding-top: 2vh;
     margin-top: 12vh;
