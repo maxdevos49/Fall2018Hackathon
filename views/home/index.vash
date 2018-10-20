@@ -7,30 +7,29 @@
         }
         <style>
         body {
-            height: 100vh;
+            max-height: 100vh;
+            overflow: hidden;
             background-color: #5b5b5b;
             background-image: url("/images/background.svg");
             background-repeat: repeat;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
-        h1     {
-            width: 100vw;
+        p     {
             height: 13vh;
+            max-width: 100vw;
+            overflow: hidden;
             position: relative;
             background-color: #FFFFFF;
             color: #c3e5e7;
-            font-size: 12vh;
+            font-size: 5em;
             margin: 20vh, auto;
             text-align: center; 
             line-height: 12vh;
             z-index: 1;
         }
-        p       {
-            color: #c3e5e7;
-        }
         div.view{
             width: 100vw;
-            height: 20vh;
+            height: 18vh;
             background-color: #699FA1;
             -ms-transform: skewY(-20deg); /* IE 9 */
             -webkit-transform: skewY(-20deg); /* Safari 3-8 */
@@ -41,7 +40,7 @@
         
         div.upload{
                 width: 100vw;
-                height: 20vh;
+                height: 18vh;
                 background-color: #A5D6D9;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
@@ -51,7 +50,7 @@
 
         div.how{
                 width: 100vw;
-                height: 20vh;
+                height: 18vh;
                 background-color: #DF7027;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
@@ -61,7 +60,7 @@
 
         div.about{
                 width: 100vw;
-                height: 20vh;
+                height: 18vh;
                 background-color: #DD8627;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
@@ -71,7 +70,7 @@
 
         .button{
             margin:2vh auto;
-            line-height: 20vh;
+            line-height: 17vh;
             text-align: center;
             font-size: 700%;
             z-index: -1;
@@ -87,9 +86,8 @@
             color: #FFFFFF;
         }
         </style>
-        <h1><b>INSERT_NAME_HERE</b></h1>
+        <p><b>INSERT_NAME_HERE</b></p>
 
-        <p></p>
         <a href="/pictures/view.html" title="View and search your pictures here!">
             <div class="view button">VIEW</div>
         </a>

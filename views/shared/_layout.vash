@@ -6,19 +6,33 @@
 		<title>@model.title | Fall Hackathon 2018</title>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
             crossorigin="anonymous">
+        <style>
+        header{
+            position: relative;
+            background-color: #000000;
+            z-index: 1;
+            color: #ffffff;
+        }
+        footer{
+            position: relative;
+            background-color: #000000;
+            z-index: 1;
+            color: #FFFFFF;
+        }
+        </style>
     </head>
     <body>
 
         <header>
             <!-- This is where all links for the header should end up -->
-            header here
+            HOME VIEW UPLOAD HOW ABOUT
         </header>
         <!-- This is the body where each indevidual view is -->
         @html.block('content')
 
         <footer>
             <!-- This is where the footer stuff should go -->
-            footer here
+            footer here -probs something about Copyright 2018
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             crossorigin="anonymous"></script>
