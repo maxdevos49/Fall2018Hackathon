@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+*.c
+*.cpp
+*.exe
+*.java
+*.class
+*.txt
+*.php
+*.sh
+*.csr
+*.key
+*.pem
+*.crt
+*.cs
+
