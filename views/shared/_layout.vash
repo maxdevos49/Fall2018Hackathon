@@ -21,6 +21,7 @@
                     <a class="nav-item nav-link active" href="/index.html">Home</a>
                     <a class="nav-item nav-link active" href="/pictures/view.html">View</a>
                     <a class="nav-item nav-link active" href="/pictures/upload.html">Upload</a>
+                    <a class="nav-item nav-link active" href="/pictures/about.html">How</a>
                     <a class="nav-item nav-link active" href="/pictures/about.html">About</a>
                 </div>
             </div>
