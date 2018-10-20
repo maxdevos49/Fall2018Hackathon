@@ -12,11 +12,11 @@ const io = require('socket.io')(server);
 app.set('view engine', 'vash');
 
 //set the routes for the server to use
-app.use('/', routes);
-
 io.on('connection', function(socket){
     console.log('a user connected');
 })
+
+app.use('/', routes);
 
 //start the server
 server.listen(PORT, function () {

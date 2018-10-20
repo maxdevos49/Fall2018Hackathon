@@ -6,70 +6,75 @@ const util = require("util");
 
 const config = require("../config.js");
 
-api.get("/", (req,res) => {
-    res.json({
-        "name":config.name,
-        "apiVersion": config.apiVersion,
-        "Owner": config.owner
+module.exports = function api(io){
+
+    api.get("/", (req,res) => {
+        res.json({
+            "name":config.name,
+            "apiVersion": config.apiVersion,
+            "Owner": config.owner
+        });
     });
-});
 
-api.get("/index", (req,res) => {
-    res.json({
-        "name":config.name,
-        "apiVersion": config.apiVersion,
-        "Owner": config.owner
+    api.get("/index", (req,res) => {
+        res.json({
+            "name":config.name,
+            "apiVersion": config.apiVersion,
+            "Owner": config.owner
+        });
     });
-});
 
 
-api.post("/upload", (req, res) => {
-    let form = new formidable.IncomingForm();
+    api.post("/upload", (req, res) => {
+        let form = new formidable.IncomingForm();
 
-    form.uploadDir = config.path + "/public/uploads";
-    form.keepExtensions = true;
-    form.maxFieldsSize = 20 * 1024 * 1024;
-    form.maxFields = 1000;
+        form.uploadDir = config.path + "/public/uploads";
+        form.keepExtensions = true;
+        form.maxFieldsSize = 20 * 1024 * 1024;
+        form.maxFields = 1000;
 
-    form.parse(req, (err, fields, files) => {
-        if (err) throw err;
-        form.openedFiles.forEach((file) => {
+        form.parse(req, (err, fields, files) => {
+            if (err) throw err;
+            form.openedFiles.forEach((file) => {
 
-            let origFileName = file.name;
-            let fileName = (file.path.substring(config.path.length + "/public".length, file.path.length));
-            let album = fields.album;
-            let tags;
-            if(typeof(fields["tags-input"]) != "undefined"){
-                tags = fields["tags-input"].split(",");
-            }
-            
-            let picture = new pictureModel({
-                origFileName: origFileName,
-                fileName: fileName,
-                album: album,
-                tag: tags
+                let origFileName = file.name;
+                let fileName = (file.path.substring(config.path.length + "/public".length, file.path.length));
+                let album = fields.album;
+                let tags;
+                if(typeof(fields["tags-input"]) != "undefined"){
+                    tags = fields["tags-input"].split(",");
+                }
+                
+                let picture = new pictureModel({
+                    origFileName: origFileName,
+                    fileName: fileName,
+                    album: album,
+                    tag: tags
+                });
+
+                picture.save((err) => {
+                    if (err) throw err;
+                    
+                });
+
             });
+            res.redirect("/pictures/upload.html");
+        });
 
-            picture.save((err) => {
-                if (err) throw err;
-            });
+        form.on('file', (name, file) => {
+            console.log("Upload " + file.name);
+        });
 
-         });
-        res.redirect("/pictures/upload.html");
     });
 
-    form.on('file', (name, file) => {
-        console.log("Upload " + file.name);
+    api.get("/photos", (req,res) => {
+        pictureModel.find((err, data) => {
+            if (err) throw err;
+
+            res.json(data);
+        });
     });
 
-});
+    return api;
 
-api.get("/photos", (req,res) => {
-    pictureModel.find((err, data) => {
-        if (err) throw err;
-
-        res.json(data);
-    });
-});
-
-module.exports = api;
+}

@@ -38,10 +38,10 @@
             </div>
         </div>
 
-        <script src="/socket.io/socket.io.js" crossorigin="anonymous"></script>
+        <!---<script src="/socket.io/socket.io.js" crossorigin="anonymous"></script>-->
         <script>
-            var socket = io();
-            socket.on('m', function(m){console.log(m);})
+            //var socket = io();
+            //socket.on('m', function(m){console.log(m);})
         </script>
 
     })
