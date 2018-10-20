@@ -20,9 +20,19 @@ const pictureModel = new Schema({
     },
     tag: [
         {
-            type: String
+            type: String,
+            default: []
         }
-    ]
+    ],
+    createdOn: {
+        type: Date,
+        default: Date.now()
+    },
+    UpdatedOn: {
+        type: Date,
+        default: Date.now()
+    }
+
 });
 
 module.exports = mongoose.model('picture', pictureModel);

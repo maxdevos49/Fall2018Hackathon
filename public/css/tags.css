@@ -3,14 +3,15 @@
 }
 
 .tags-input {
-    border: 1px solid #333;
     display: inline-block;
+    margin: 0; 
+    padding: auto;
+
 }
 
 .tags-input .tag {
-    font-size: 85%;
-    padding: 0.5em 0.75em;
-    margin: 0.25em 0.1em;
+    padding: 0.1em 0.2em;
+    margin:0 0.2em;
     display: inline-block;
     background-color: #ddd;
     transition: all 0.1s linear;
@@ -26,8 +27,7 @@
     content: '×';
     font-weight: bold;
     display: inline-block;
-    transform: scale(1.4);
-    margin-left: 0.75em;
+    margin-left: 1em;
 }
 
 .tags-input .tag .close:hover::after {
@@ -35,7 +35,12 @@
 }
 
 .tags-input .main-input {
-    border: 0;
-    outline: 0;
-    padding: 0.5em 0.1em;
+    border: none;
+    height: 4vh;
+}
+
+.main-input{
+    margin: 0;
+    padding: 0;
+    width: 5vw;
 }

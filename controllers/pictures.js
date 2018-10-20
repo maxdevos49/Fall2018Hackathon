@@ -3,7 +3,14 @@ const router = express.Router();
 const pictureModel = require('../models/pictureModel');
 
 router.get("/upload.html", (req, res) => {
-    res.render("pictures/upload");
+
+    pictureModel.find().distinct('album',(err, data) => {
+        if (err) throw err
+        res.render("pictures/upload", {options: data});
+
+    });
+
+    
 });
 
 router.get("/view.html", (req, res) => {

@@ -7,23 +7,63 @@
         }
 
         <link rel="stylesheet" href="/css/tags.css">
+        <link rel="stylesheet" href="/css/upload.css">
         
-        <h3>Upload Page</h3>
+        <div class="container formShape col-md-6">
+            <form method="POST" enctype="multipart/form-data" action="/api/upload">
 
-        <form method="POST" enctype="multipart/form-data" action="/api/upload">
+                <div class="form-group">
+                    <label>Input Images</label>
+                    <input name="files" type="file" class="form-control" multiple required>
+                </div>
+                <div name="album" class="form-group">
+                    <label>Album</label>
 
-            <label>Files</label>
-            <input name="files" type="file" multiple>
-            <br/>
-            <label>Album Name</label>
-            <input name="album" type="text">
-            <br/>
-            <label>Tags</label>
-            <div class="tags-input" data-name="tags-input" accept="image/*"></div>
-            <br/>
-            <input type="submit">
+                    <span style="display: inline; white-space: nowrap;"> 
 
-        </form>
+                        <select id="selectOption" name="album" value="general" class="selectOption form-control">
+                            @model.options.forEach((option) => {
+                                <option value="@option">@option</option>
+                            })
+                        </select>
+                        
+                        <input id="newAlbum" placeholder="New Album" type="hidden">
+                        <input value="New Album" id="newAlbumBut" type="button" class="btn btn-secondary" onclick="showAddAlbum()">
+                    </span>
+
+                    <script>
+                        let toggle = false;
+
+                        function showAddAlbum(){
+                            if(!toggle){
+                                toggle=true;
+                                document.getElementById("newAlbum").setAttribute("type","text")
+                                document.getElementById("newAlbumBut").value = "Add";
+                            }else{
+                                toggle=false;
+                                let field = document.getElementById("newAlbum");
+                                field.setAttribute("type","hidden");
+                                document.getElementById("newAlbumBut").value = "New Album";
+                                if(field.value.length > 0){
+                                    let selector = document.getElementById("selectOption")
+                                    selector.innerHTML += `<option value="${field.value}">${field.value}</option>`;
+                                    selector.value = field.value;
+                                    field.value = "";
+                                }
+
+                            }
+                        }
+                    </script>
+                </div>
+                <div class="form-group">
+                    <label>Tags</label><br>
+                    <div class="tags-input form-control" data-name="tags-input" accept="image/*"></div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+
+            </form>
+        </div>
 
     <script src="/javascript/tags.js"></script>
 
