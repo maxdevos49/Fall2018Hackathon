@@ -4,7 +4,10 @@
   "description": "Fall Project!!!!",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon server.js"
+    "build": "babel client -d public/javascript",
+    "babel-watch": "babel client --watch -d public/javascript",
+    "server": "nodemon server.js",
+    "dev": "npm-run-all --parallel babel-watch server"
   },
   "repository": {
     "type": "git",
@@ -26,5 +29,12 @@
     "nodemon": "*",
     "socket.io": "^2.1.1",
     "vash": "^0.12.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "npm-run-all": "^4.1.3"
   }
 }
