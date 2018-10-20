@@ -56,7 +56,7 @@ module.exports = function api(io){
 
                 picturem.save((err) => {
                     if (err) throw err;
-                    io.emit('new', picture);
+                    io.sockets.emit('new', picture);
                 });
 
             });
