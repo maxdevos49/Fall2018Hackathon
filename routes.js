@@ -1,7 +1,6 @@
 
-
 module.exports = function routes(io){
-    
+
     const express = require('express');
     const router = express.Router();
     const mongoose = require('mongoose');
@@ -16,7 +15,6 @@ module.exports = function routes(io){
 
     //api routes
     const API_index = require("./api/api.js");
-
 
     //connect to the database using Mongoose
     mongoose.connect(config.dbUrl, {useNewUrlParser: true});
