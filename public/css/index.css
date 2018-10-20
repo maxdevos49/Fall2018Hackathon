@@ -38,11 +38,15 @@ div.button:hover{
 
 a.div{
     text-decoration:none;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 a:hover{
     text-decoration:none;
-    color: #FFFFFF;
+    color: #c3e5e7;
+}
+a.links{
+    
+    color: #ffffff;
 }
 
 @media (max-width: 770px) {
