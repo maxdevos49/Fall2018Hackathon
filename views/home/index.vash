@@ -8,19 +8,19 @@
         <style>
         body {
             height: 100vh;
-            background-color: #B4B6B1;
+            background-color: #5b5b5b;
             background-image: url("/images/background.svg");
-            background-repeat:no-repeat;
+            background-repeat: repeat;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
-        h1   {
-            color: #0000ff;
+        h1     {
+            color: #c3e5e7;
             /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif*/
             margin-bottom: 10vh;
-            text-align: center 
+            text-align: center; 
         }
         p       {
-            color: rgb(59, 58, 58);
+            color: #c3e5e7;
         }
         div.view{
                 /*width: 150px;
@@ -33,7 +33,6 @@
                 transform: skewY(-20deg);
                 align:center;
         }
-        /*div.view:hover{background-color: #C3E5E7; color: #5d5c58;}*/
         div.view:hover{background-color: #5d5c58; color: #C3E5E7;}
         
         div.upload{
@@ -83,8 +82,12 @@
             text-decoration:none;
             color: #FFFFFF;
         }
+        a:hover{
+            text-decoration:none;
+            color: #FFFFFF;
+        }
         </style>
-        <h1>Home Page</h1>
+        <h1>INSERT_NAME_HERE</h1>
 
         <p>This is the home page!!</p>
         <a href="/pictures/view.html">
