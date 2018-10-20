@@ -8,15 +8,16 @@
         <style>
         body {
             height: 100vh;
-            background-color: #A5D6D9;
-            background-image: linear-gradient(-20deg,#A5D6D9 50%, rgb(255, 191, 138) 50%);
-            background-repeat:no-repeat;
+            background-color: #B4B6B1;
+            /*background-image: linear-gradient(-20deg,#A5D6D9 50%, rgb(255, 191, 138) 50%);
+            */background-repeat:no-repeat;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
         h1   {
             color: #0000ff;
             /*font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif*/
-            text-align: center
+            margin-bottom: 10vh;
+            text-align: center 
         }
         p       {
             color: rgb(59, 58, 58);
@@ -26,7 +27,7 @@
                 height: 80px;*/
                 width: 80vw;
                 height: 20vh;
-                background-color: yellow;
+                background-color: #699FA1;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg);
@@ -39,7 +40,7 @@
                 height: 80px;*/
                 width: 80vw;
                 height: 20vh;
-                background-color: yellow;
+                background-color: #C3E5E7;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg); 
@@ -51,7 +52,7 @@
                 height: 80px;*/
                 width: 80vw;
                 height: 20vh;
-                background-color: yellow;
+                background-color: #DF7027;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg); 
@@ -63,7 +64,7 @@
                 height: 80px;*/
                 width: 80vw;
                 height: 20vh;
-                background-color: yellow;
+                background-color: #DD8627;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg); 
@@ -71,28 +72,34 @@
         div.about:hover{background-color: green;}
 
         .button{
-            margin-top:2vh;
-            margin-bottom:2vh;
-            align:center;
+            margin:2vh auto;
+            line-height: 20vh;
+            text-align: center;
+            font-size: 400%;
+        }
+
+        a{
+            text-decoration:none;
+            color: #FFFFFF;
         }
         </style>
         <h1>Home Page</h1>
 
         <p>This is the home page!!</p>
         <a href="">
-            <div class="view button">Test</div>
+            <div class="view button">VIEW</div>
         </a>
 
         <a href="">
-            <div class="upload button">Test</div>
+            <div class="upload button">UPLOAD</div>
         </a>
 
         <a href="">
-            <div class="how button">Test</div>
+            <div class="how button">HOW</div>
         </a>
 
         <a href="">
-            <div class="about button">Test</div>
+            <div class="about button">ABOUT</div>
         </a>
         
     })
