@@ -17,7 +17,7 @@ const API_index = require("./api/api.js");
 mongoose.connect(config.dbUrl, {useNewUrlParser: true});
 
 //middleware
-router.use(express.static('/public'));
+router.use(express.static('./public'));
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
 

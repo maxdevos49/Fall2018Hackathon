@@ -12,7 +12,7 @@ const pictureModel = new Schema({
     },
     album: {
         type: String,
-        required: true
+        default: "default"
     }
 });
 

@@ -9,6 +9,7 @@
         <h3>Upload Page</h3>
 
         <form method="POST" enctype="multipart/form-data" action="/api/upload">
+            <input name="album" type="text">
             <input name="files" type="file" multiple>
             <input type="submit">
         </form>

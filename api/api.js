@@ -1,6 +1,7 @@
 const express = require('express');
 const api = express.Router();
 const formidable = require('formidable');
+const pictureModel = require("../models/pictureModel.js");
 
 const config = require("../config.js");
 
@@ -30,6 +31,8 @@ api.post("/upload", (req, res) => {
     });
 
     form.on('file', function (name, file){
+
+        console.log(req.body.album);
         console.log('Uploaded ' + file.name);
     });
 
