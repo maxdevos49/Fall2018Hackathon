@@ -27,6 +27,7 @@ div.button{
     -webkit-transform: skewY(-7deg); /* Safari 3-8 */
     transform: skewY(-7deg);  
     text-align: center;
+    line-height: 16vh;
     font-size: 5em;
 }
 
