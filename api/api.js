@@ -77,6 +77,11 @@ module.exports = function api(io){
         });
     });
 
+
+    api.get("/delete", (req,res) => {
+
+    });
+
     return api;
 
 }
