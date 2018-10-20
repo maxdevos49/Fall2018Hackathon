@@ -1,0 +1,25 @@
+body {
+    min-height: 100vh;
+    background-color: #5b5b5b;
+    background-image: url("/images/background.svg");
+    background-repeat: repeat;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+nav{
+    position: relative;
+    z-index: 100;
+    margin-bottom: 8vh;
+}
+
+#footer{
+    padding-top: 2vh;
+    margin-top: 12vh;
+    background-color: rgb(216, 216, 216);
+}
+
+@media (max-width: 770px) {
+    body{
+        background-size: contain;
+    }
+}

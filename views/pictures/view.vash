@@ -5,30 +5,35 @@
         @{
             model.title = "View";
         }
-
+        <style>
+            .tags{
+                padding: 5px 8px;
+                margin: 2px 5px;
+            }
+        </style>
         <div class="container">
             <h3 class="mt-5" >View Photos</h3>
             <div class="py-5">
                 <div class="container">
-
-                <div class="row">
-                    @model.photos.forEach(function(img){
-                        <div class="col-md-4">
-                        <div class="card mb-4 shadow-sm">
-                            <img class="card-img-top" style="width: 100%; display: block;" src="@img.fileName" data-holder-rendered="true">
-                            <div class="card-body">
-                            <h5 class="card-title">@img.origFileName</h5>
-                            <!-- button-group stuff is hack -->
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="btn-group">
+                    <div class="row">
+                        @model.photos.forEach(function(img){
+                            <div class="col-md-3">
+                                <div class="card mb-2 shadow-sm">
+                                    <img class="card-img-top" src="@img.fileName" data-holder-rendered="true">
+                                    <div class="card-body">
+                                    <h5 class="card-title">@img.origFileName</h5>
+                                    <small class="text-muted">Album: @img.album</small><br/>
+                                    <small class="text-muted">Tags:</small>
+                                        <div class="btn-group">
+                                            @img.tag.forEach((item)=>{
+                                                <div class="alert alert-secondary tags">@item</div>
+                                            })
+                                        </div>
+                                    </div>
                                 </div>
-                                <small class="text-muted">@img.album</small>
                             </div>
-                            </div>
-                        </div>
-                        </div>
-                    })
-                </div>
+                        })
+                    </div>
                 </div>
             </div>
         </div>
