@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
 
 //config settings
 const config = require('./config.js');
@@ -18,7 +17,6 @@ const API_index = require("./api/api.js");
 mongoose.connect(config.dbUrl, {useNewUrlParser: true});
 
 //middleware
-router.use(cookieParser());
 router.use(express.static('/public'));
 router.use(bodyParser.urlencoded({extended: false}));
 router.use(bodyParser.json());
