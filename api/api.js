@@ -38,7 +38,9 @@ api.post("/upload", (req, res) => {
             let origFileName = file.name;
             let fileName = (file.path.substring(config.path.length + "/public".length, file.path.length));
             let album = fields.album;
-            let tags = fields["tags-input"].split(",");
+            if(typeof(fields["tags-input"])  != undefined){
+                let tags = fields["tags-input"].split(",");
+            }
             
             let picture = new pictureModel({
                 origFileName: origFileName,

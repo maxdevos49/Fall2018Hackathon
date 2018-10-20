@@ -13,12 +13,13 @@ nav{
 }
 
 #footer{
+    padding-top: 2vh;
     margin-top: 12vh;
     background-color: rgb(216, 216, 216);
 }
 
 @media (max-width: 770px) {
     body{
-        background-size: cover;
+        background-size: contain;
     }
 }

@@ -19,7 +19,7 @@
             <input name="album" type="text">
             <br/>
             <label>Tags</label>
-            <div class="tags-input" data-name="tags-input"></div>
+            <div class="tags-input" data-name="tags-input" accept="image/*"></div>
             <br/>
             <input type="submit">
 
