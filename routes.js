@@ -16,10 +16,8 @@ module.exports = function routes(io){
     //api routes
     const API_index = require("./api/api.js");
 
-
     //connect to the database using Mongoose
     mongoose.connect(config.dbUrl, {useNewUrlParser: true});
-
     //middleware
     router.use(express.static('./public'));
     router.use(bodyParser.urlencoded({extended: false}));
