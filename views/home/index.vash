@@ -9,8 +9,8 @@
         body {
             height: 100vh;
             background-color: #B4B6B1;
-            /*background-image: linear-gradient(-20deg,#A5D6D9 50%, rgb(255, 191, 138) 50%);
-            */background-repeat:no-repeat;
+            background-image: url("/images/background.svg");
+            background-repeat:no-repeat;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
         }
         h1   {
@@ -33,7 +33,8 @@
                 transform: skewY(-20deg);
                 align:center;
         }
-        div.view:hover{background-color: green;}
+        /*div.view:hover{background-color: #C3E5E7; color: #5d5c58;}*/
+        div.view:hover{background-color: #5d5c58; color: #C3E5E7;}
         
         div.upload{
                 /*width: 150px;
@@ -45,7 +46,7 @@
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg); 
         }
-        div.upload:hover{background-color: green;}
+        div.upload:hover{background-color: #5d5c58; color: #C3E5E7;}
 
         div.how{
                 /*width: 150px;
@@ -57,7 +58,7 @@
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg); 
         }
-        div.how:hover{background-color: green;}
+        div.how:hover{background-color: #5d5c58; color: #C3E5E7;}
 
         div.about{
                 /*width: 150px;
@@ -69,13 +70,13 @@
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg); 
         }
-        div.about:hover{background-color: green;}
+        div.about:hover{background-color: #5d5c58; color: #C3E5E7;}
 
         .button{
             margin:2vh auto;
             line-height: 20vh;
             text-align: center;
-            font-size: 400%;
+            font-size: 700%;
         }
 
         a{
