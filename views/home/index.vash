@@ -40,7 +40,7 @@
                 height: 80px;*/
                 width: 80vw;
                 height: 20vh;
-                background-color: #C3E5E7;
+                background-color: #A5D6D9;
                 -ms-transform: skewY(-20deg); /* IE 9 */
                 -webkit-transform: skewY(-20deg); /* Safari 3-8 */
                 transform: skewY(-20deg); 
@@ -90,7 +90,7 @@
             <div class="view button">VIEW</div>
         </a>
 
-        <a href="">
+        <a href="/pictures/upload.html">
             <div class="upload button">UPLOAD</div>
         </a>
 
