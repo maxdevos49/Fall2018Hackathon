@@ -6,7 +6,7 @@
   "scripts": {
     "build": "babel client -d public/javascript",
     "babel-watch": "babel client --watch -d public/javascript",
-    "server": "npm-run-all --parallel babel-watch server",
+    "server": "nodemon server.js",
     "dev": "npm-run-all --parallel babel-watch server"
   },
   "repository": {
