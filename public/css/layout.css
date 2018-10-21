@@ -18,11 +18,34 @@ nav{
 
 .logoArea{
     white-space: nowrap;
+    font-size: 4.8vh;
 }
+
+.navbar-toggler{
+    background: #d6d6d6;
+}
+
 #footer{
     padding-top: 2vh;
     margin-top: 12vh;
-    background-color: rgb(216, 216, 216);
+    background-color: #FFFFFF;
+}
+
+.navbar-nav{
+    text-align: center;
+    font-size: 2vh;
+}
+
+.nav-item:hover{
+    background: #5b5b5b;
+}
+
+.nav-link:hover{
+
+}
+
+.active{
+
 }
 
 @media (max-width: 770px) {

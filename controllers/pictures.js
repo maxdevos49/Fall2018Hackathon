@@ -24,5 +24,22 @@ module.exports = function routes(io){
         });
     });
 
+    router.get("/slideShow.html", (req, res) => {
+
+        res.render("pictures/slideShow");
+    });
+
+    router.get("/singleView.html", (req, res) => {
+        let = req.query.id;
+
+        pictureModel.findById((err, data) => {
+            if (err) throw err;
+
+            let model = {photos: data};
+
+            res.render("pictures/singleView", model);
+        });
+    });
+
     return router;
 }

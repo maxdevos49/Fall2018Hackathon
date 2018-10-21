@@ -1,0 +1,15 @@
+@html.extend('shared/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        @{
+            model.title = "Slideshow";
+        }
+        
+        <!-- Display a single image here -->
+
+    })
+
+})
+
+
