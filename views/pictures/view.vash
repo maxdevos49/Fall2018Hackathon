@@ -13,7 +13,7 @@
             }
         </style>
         <div class="container">
-            <h3 class="mt-5" >View Photos</h3>
+            <h3 class="mt-5" style="color: #ffffff">View Photos</h3>
             <div id="root"><p style="color: #ff0000;">Loading...</p></div>
         </div>
 

@@ -1,13 +1,13 @@
 const PHOTOS_PER_PAGE = 20;
+const ALL_TEXT = 'All Albums';
 
-class PhotoList extends React.Component {
+class FilterPhotos extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      photos: props.photos,
-      page: 1,
-      slides: false
+      photos: this.props.photos,
+      selected: ALL_TEXT
     }
   }
 
@@ -18,26 +18,89 @@ class PhotoList extends React.Component {
       photos.push(photo);
       this.setState({
         photos: photos,
-        page: this.state.page,
-        slides: this.state.slides
+        selected: this.state.selected
       });
     });
   }
 
+  render() {
+    let albums = [ALL_TEXT];
+    let photos = [];
+
+
+    for (let photoNum in this.state.photos) {
+      let photo = this.state.photos[photoNum];
+      if (!albums.includes(photo.album)){
+        albums.push(photo.album);
+      }
+
+      if (photo.album === this.state.selected || ALL_TEXT === this.state.selected) {
+        photos.push(photo);
+      }
+    }
+
+    let albumList = [];
+    for (let albumNum in albums) {
+      let album = albums[albumNum];
+      if (album === this.state.selected) {
+        albumList.push(<option selected>{album}</option>);
+      } else {
+        albumList.push(<option>{album}</option>);
+      }
+    }
+    
+    console.log(photos);
+
+    return (
+      <div>
+        <div class="row">
+          <div class="col">
+          <div class="col-4">
+            <b style={{color: 'white'}}>Album</b>
+            <select class="form-control" id="sel1" onChange={(event) => this.setState({
+              selected: event.target.value
+            })} >
+              {albumList}
+            </select>
+          </div>
+          </div>
+        </div>
+        <PhotoList photos={photos} />
+      </div>
+      );
+  }
+}
+
+class PhotoList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      page: 1,
+      slides: false
+    }
+  }
+
   setPage(pageNum) {
     this.setState({
-      photos: this.state.photos,
       page: pageNum,
       slides: this.state.slides
     })
   }
 
   render() {
-    const items = this.state.photos.slice(PHOTOS_PER_PAGE * (this.state.page - 1), PHOTOS_PER_PAGE * this.state.page).map((photo) => <PhotoCard photo={photo} />);
+    if (this.state.page > (this.props.photos.length / PHOTOS_PER_PAGE) + 1) {
+      this.setState({
+        page: 1,
+        slides: this.state.slides
+      });
+    }
+
+    const items = this.props.photos.slice(PHOTOS_PER_PAGE * (this.state.page - 1), PHOTOS_PER_PAGE * this.state.page).map((photo) => <PhotoCard photo={photo} />);
 
     let paginationItems = [];
 
-    for (let i = 0; i < this.state.photos.length / PHOTOS_PER_PAGE; i++) {
+    for (let i = 0; i < this.props.photos.length / PHOTOS_PER_PAGE; i++) {
       let pageNum = i + 1;
       paginationItems.push(
         <li class={`page-item${this.state.page == pageNum ? ' active' : ''}`}>
@@ -60,7 +123,7 @@ class PhotoList extends React.Component {
           <a class="page-link" onClick={() => this.setPage(this.state.page - 1)} href="#" tabindex="-1">Previous</a>
         </li>
         {paginationItems}
-        <li class={`page-item${this.state.page >= this.state.photos.length / PHOTOS_PER_PAGE ? ' disabled' : ''}`}>
+        <li class={`page-item${this.state.page >= this.props.photos.length / PHOTOS_PER_PAGE ? ' disabled' : ''}`}>
           <a class="page-link" onClick={() => this.setPage(this.state.page + 1)} href="#">Next</a>
         </li>
       </ul>);
@@ -68,11 +131,10 @@ class PhotoList extends React.Component {
     let slideshowComp = this.state.slides ?
         <Slideshow 
           exit={() => {this.setState({
-            photos: this.state.photos,
             page: this.state.page,
             slides: false
           })}}
-          photos={this.state.photos}
+          photos={this.props.photos}
           initSlide={PHOTOS_PER_PAGE * (this.state.page - 1)}/>
       : '';
 
@@ -87,7 +149,6 @@ class PhotoList extends React.Component {
             <div class="col">
               <button type="button" class="btn btn-primary float-right" onClick={() => {
                 this.setState({
-                  photos: this.state.photos,
                   page: this.state.page,
                   slides: true
                 });
@@ -142,7 +203,7 @@ Http.send();
 Http.onload=(e)=>{
   let photos = JSON.parse(Http.responseText);
 
-  ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
+  ReactDOM.render(<FilterPhotos photos={photos} />,document.getElementById('root'));
 }
 
 /* Get the documentElement (<html>) to display the page in fullscreen */

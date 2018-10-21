@@ -3,12 +3,12 @@ body {
     background-color: #5b5b5b;
     background-image: url("/images/background.svg");
     background-repeat: repeat;
-    text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 nav{
     margin-bottom: 8vh;
+    text-align: center;
 }
 
 .logoHome{
