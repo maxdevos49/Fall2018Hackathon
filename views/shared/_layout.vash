@@ -15,7 +15,7 @@
             <a class="navbar-brand" href="/index.html">
                 <span class="logoArea">
                     <img class="logoHome" src = "/images/logo.png" />
-                    PhotoCenter
+                    <b>PhotoCenter</b>
                 </span>
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
