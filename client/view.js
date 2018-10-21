@@ -1,7 +1,27 @@
 class PhotoList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      photos: props.photos,
+      page: 0
+    }
+  }
+
+  componentDidMount() {
+    var socket = io();
+    socket.on('new', (photo) => {
+      let photos = this.state.photos;
+      photos.push(photo);
+      this.setState({
+        photos: photos
+      });
+    });
+  }
+
   render() {
-    const items = this.props.photos.map((photo) => <PhotoCard photo={photo} />);
-    
+    const items = this.state.photos.map((photo) => <PhotoCard photo={photo} />);
+
     return (
       <div class="py-5">
           <div class="container">
@@ -44,15 +64,8 @@ const Http = new XMLHttpRequest();
 const url='/api/photos';
 Http.open("GET", url);
 Http.send();
-let photos = [];
 Http.onload=(e)=>{
-  photos = JSON.parse(Http.responseText);
+  let photos = JSON.parse(Http.responseText);
 
   ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
-
-  var socket = io();
-  socket.on('new', function (photo) {
-    photos.push(photo);
-    ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
-  });
 }
