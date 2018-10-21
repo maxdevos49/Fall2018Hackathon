@@ -20,7 +20,7 @@ module.exports = function routes(io){
     mongoose.connect(config.dbUrl, {useNewUrlParser: true});
     //middleware
     router.use(express.static('./public'));
-    router.use(bodyParser.urlencoded({extended: false}));
+    router.use(bodyParser.urlencoded({extended : true}));
     router.use(bodyParser.json());
 
     //use document routes
@@ -42,7 +42,7 @@ module.exports = function routes(io){
     router.use('/', (req,res) => {
 
         res.status(404);
-        res.render("status/404");
+        res.render("status/404", req);
 
     });
 
