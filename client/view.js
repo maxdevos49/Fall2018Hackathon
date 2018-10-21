@@ -90,7 +90,8 @@ class PhotoList extends React.Component {
                   photos: this.state.photos,
                   page: this.state.page,
                   slides: true
-                })
+                });
+                openFullscreen();
               }}>Display Slideshow</button>
             </div>
           </div>
@@ -142,4 +143,20 @@ Http.onload=(e)=>{
   let photos = JSON.parse(Http.responseText);
 
   ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
+}
+
+/* Get the documentElement (<html>) to display the page in fullscreen */
+var elem = document.documentElement;
+
+/* View in fullscreen */
+function openFullscreen() {
+  if (elem.requestFullscreen) {
+    elem.requestFullscreen();
+  } else if (elem.mozRequestFullScreen) { /* Firefox */
+    elem.mozRequestFullScreen();
+  } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari and Opera */
+    elem.webkitRequestFullscreen();
+  } else if (elem.msRequestFullscreen) { /* IE/Edge */
+    elem.msRequestFullscreen();
+  }
 }

@@ -7,7 +7,7 @@ class Slideshow extends React.Component {
         this.state = {
             autoAdvance: true,
             slideNum: this.props.initSlide ? this.props.initSlide : 0
-        }
+        };
     }
 
     autoAdvance() {
@@ -51,6 +51,7 @@ class Slideshow extends React.Component {
             } else if (key == 27) {
                 // esc
                 this.props.exit();
+                closeFullscreen();
             }
             console.log(key);
         }
@@ -75,3 +76,16 @@ class Slideshow extends React.Component {
         </div>)
     }
 }
+
+/* Close fullscreen */
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.webkitExitFullscreen) { /* Chrome, Safari and Opera */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+      document.msExitFullscreen();
+    }
+  }
