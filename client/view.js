@@ -23,8 +23,10 @@ class PhotoCard extends React.Component {
       ));
     
     return (
-      <div class="col-md-3">
-          <div class="card mb-2 shadow-sm">
+      <div class="col-md-3" onClick={() =>
+        document.location.href = `/picture/singleView.html?id=${this.props.photo._id}`
+      }>
+          <div class="card mb-2 shadow-sm" style={{cursor:'pointer'}}>
               <img class="card-img-top" src={this.props.photo.fileName} data-holder-rendered="true" />
               <div class="card-body">
               <h5 class="card-title">{this.props.photo.origFileName}</h5>

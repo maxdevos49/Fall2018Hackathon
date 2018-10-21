@@ -45,16 +45,14 @@ module.exports = function api(io){
                     tags = fields["tags-input"].split(",");
                 }
 
-                let picture = {
+                let picture = new pictureModel({
                     origFileName: origFileName,
                     fileName: fileName,
                     album: album,
                     tag: tags
-                }
+                });
 
-                let picturem = new pictureModel(picture);
-
-                picturem.save((err) => {
+                picture.save((err) => {
                     if (err) throw err;
                     io.sockets.emit('new', picture);
                 });
