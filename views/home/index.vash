@@ -20,12 +20,12 @@
                     UPLOAD
                 </div>
             </a>
-            <a class="links" href="/how.html" title="How does PhotoCenter work? Click to find out!">
+            <a class="links" href="https://github.com/maxdevos49/Fall2018Hackathon" title="How does PhotoCenter work? Click to find out!">
                 <div class="how button">
                     HOW
                 </div>
             </a>
-            <a class="links" href="/about.html" title="Who made this app and why? Those questions can be answered here!">
+            <a class="links" href="https://devpost.com/software/photocenter-he1ajs" title="Who made this app and why? Those questions can be answered here!">
                 <div class="about button">
                     ABOUT
                 </div>

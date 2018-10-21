@@ -6,7 +6,11 @@
             model.title = "404";
         }
         
-        <p>404 dude. @model.url</p>
+        <div class="container col-md-4" style="margin: auto;color: white;border-radius: 4px">
+            <h3>404 dude.<br>
+             @model.url</h3>
+            <img src="/images/404error.png">
+        </div>
     })
 
 })

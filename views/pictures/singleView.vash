@@ -3,7 +3,7 @@
     @html.block('content', function(model){
 
         @{
-            model.title = "Image Details";
+            model.title = "Picture - Details";
         }
         <link rel="stylesheet" href="/css/singleView.css">
         
@@ -42,9 +42,7 @@
                                 </div>
                             </a>
                         </div>
-
                     </div>
-
                 </div>  
                 <img class="card-img-top viewImage" src="@model.fileName" data-holder-rendered="true" />
             </div>

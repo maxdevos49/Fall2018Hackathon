@@ -3,18 +3,19 @@
     @html.block('content', function(model){
 
         @{
-            model.title = "Edit Picture";
+            model.title = "Edit - Picture";
         }
 
         <link rel="stylesheet" href="/css/tags.css">
         <link rel="stylesheet" href="/css/edit.css">
         
         <div class="container formShape col-md-6">
+            <h3>Edit Picture</h3>
             <form method="post" action="/api/edit">
 
                 <div class="form-group">
                     <label>File Name</label>
-                    <input name="text" type="text" value="@model.origFileName" class="form-control" required>
+                    <input name="origFileName" type="text" value="@model.origFileName" class="form-control" required>
                 </div>
 
                 <div name="album" class="form-group">

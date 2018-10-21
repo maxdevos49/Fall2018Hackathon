@@ -5,6 +5,7 @@
         @{
             model.title = "View";
         }
+        
         <link rel="stylesheet" href="/css/slideshow.css">
         <style>
             .tags{
@@ -14,7 +15,7 @@
         </style>
         <div class="container">
             <h3 class="mt-5" style="color: #ffffff">View Photos</h3>
-            <div id="root"><p style="color: #ff0000;">Loading...</p></div>
+            <div id="root" style="text-align: center"><img height="50px" width="50px" src="/images/loading.gif"></div>
         </div>
 
 

@@ -43,27 +43,27 @@
                 <div class="row text-xs-center text-sm-center text-md-center">
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <ul class="list-unstyled quick-links">
-                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Home</a></li>
+                            <li><a href="/index.html"><i class="fa fa-angle-double-right"></i>Home</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <ul class="list-unstyled quick-links">
-                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>View</a></li>
+                            <li><a href="/pictures/view.html"><i class="fa fa-angle-double-right"></i>View</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <ul class="list-unstyled quick-links">
-                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Upload</a></li>
+                            <li><a href="/pictures/upload.html"><i class="fa fa-angle-double-right"></i>Upload</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-2 col-md-2">
                         <ul class="list-unstyled quick-links">
-                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
+                            <li><a href="https://github.com/maxdevos49/Fall2018Hackathon"><i class="fa fa-angle-double-right"></i>Get Started</a></li>
                         </ul>
                     </div>
                     <div class="col-xs-12 col-sm-3 col-md-3">
                         <ul class="list-unstyled quick-links">
-                            <li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About</a></li>
+                            <li><a href="https://devpost.com/software/photocenter-he1ajs"><i class="fa fa-angle-double-right"></i>About</a></li>
                         </ul>
                     </div>
                 </div class="footerEnd">

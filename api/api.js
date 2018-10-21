@@ -150,7 +150,7 @@ module.exports = function api(io){
 
         pictureModel.findById(id, (err, data) => {
             if (err) throw err;
-
+            
            data.origFileName = res.body.origFileName;
            data.album = req.body.album;
            data.tags = req.body.tags;

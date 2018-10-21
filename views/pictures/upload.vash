@@ -8,16 +8,16 @@
 
         <link rel="stylesheet" href="/css/tags.css">
         <link rel="stylesheet" href="/css/upload.css">
-        
         <div class="container formShape col-md-6">
+        <h3>Upload Image(s)</h3>
             <form method="POST" enctype="multipart/form-data" action="/api/upload">
 
                 <div class="form-group">
-                    <label>Input Images</label>
+                    <label>Input Images:</label>
                     <input name="files" type="file" class="form-control" multiple required>
                 </div>
                 <div name="album" class="form-group">
-                    <label>Album</label>
+                    <label>Album:</label>
 
                     <span style="display: inline; white-space: nowrap;"> 
 
@@ -56,7 +56,7 @@
                     </script>
                 </div>
                 <div class="form-group">
-                    <label>Tags</label><br>
+                    <label>Tags:</label><br>
                     <div class="tags-input form-control" data-name="tags-input" accept="image/*"></div>
                 </div>
 
