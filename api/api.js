@@ -1,3 +1,4 @@
+
 module.exports = function api(io){
 
     const express = require('express');
@@ -33,6 +34,7 @@ module.exports = function api(io){
         form.maxFieldsSize = 20 * 1024 * 1024;
         form.maxFields = 1000;
 
+		var thumb = require('node-thumbnail').thumb;
         form.parse(req, (err, fields, files) => {
             if (err) throw err;
             form.openedFiles.forEach((file) => {
@@ -55,6 +57,35 @@ module.exports = function api(io){
                 picture.save((err) => {
                     if (err) throw err;
                     io.sockets.emit('new', picture);
+
+                    resolve = require('path').resolve
+
+                    thumb({
+                    	source: resolve(config.path + '/public/uploads/'),
+                    	destination: resolve(config.path + '/public/thumbnails/'),
+                        suffix: '_big',
+                    	width: 1000,
+                    	height: 1000,
+                        skip: true
+                    }).then(() => {
+                    	console.log("Success");
+                    }).catch((e) => {
+                    	 console.log(e);
+                    });
+
+                    thumb({
+                        source: resolve(config.path + '/public/uploads/'),
+                        destination: resolve(config.path + '/public/thumbnails/'),
+                        suffix: '_small',
+                        width: 200,
+                        height: 200,
+                        skip: true
+                    }).then(() => {
+                        console.log("Success");
+                    }).catch((e) => {
+                         console.log(e);
+                    });
+
                 });
 
             });
