@@ -48,7 +48,7 @@ Http.onload=(e)=>{
 
   ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
 
-  var socket = io(`${document.location.protocol}://${document.location.host}`);
+  var socket = io();
   socket.on('new', function (photo) {
     photos.push(photo);
     ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
