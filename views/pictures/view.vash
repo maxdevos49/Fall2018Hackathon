@@ -1,4 +1,4 @@
-+@html.extend('shared/_layout', function(model){
+@html.extend('shared/_layout', function(model){
 
     @html.block('content', function(model){
 
