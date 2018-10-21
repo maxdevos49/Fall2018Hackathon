@@ -26,6 +26,7 @@
     "mongodb": "*",
     "mongoose": "*",
     "node": "8.11.1",
+    "node-thumbnail": "^0.14.0",
     "nodemon": "*",
     "socket.io": "^2.1.1",
     "vash": "^0.12.4"
