@@ -89,7 +89,11 @@ class PhotoCard extends React.Component {
         document.location.href = `/pictures/singleView.html?id=${this.props.photo._id}`
       }>
           <div class="card mb-2 shadow-sm" style={{cursor:'pointer'}}>
-              <img class="card-img-top" src={this.props.photo.fileName} data-holder-rendered="true" />
+              <ImageLoader
+                class="card-img-top"
+                style={{objectFit: 'contain'}}
+                loading={<div height='150 px'></div>}
+                src={this.props.photo.fileName}/>
               <div class="card-body">
               <h5 class="card-title">{this.props.photo.origFileName}</h5>
               <small class="text-muted">Album: {this.props.photo.album}</small><br/>
