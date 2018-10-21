@@ -13,7 +13,7 @@ app.set('view engine', 'vash');
 
 //set the routes for the server to use
 io.on('connection', function(socket){
-    console.log('a user connected');
+    // console.log('a user connected');
 })
 
 app.use('/', routes(io));

@@ -66,7 +66,9 @@ module.exports = function api(io){
                         suffix: '_big',
                     	width: 1000,
                     	height: 1000,
-                        skip: true
+                        skip: true,
+                        ignore: false,
+                        digest: false
                     }).then(() => {
                     	console.log("Success");
                     }).catch((e) => {
@@ -79,7 +81,9 @@ module.exports = function api(io){
                         suffix: '_small',
                         width: 200,
                         height: 200,
-                        skip: true
+                        skip: true,
+                        ignore: false,
+                        digest: false
                     }).then(() => {
                         console.log("Success");
                     }).catch((e) => {
@@ -135,13 +139,32 @@ module.exports = function api(io){
         pictureModel.findById(id, (err, data) => {
 
             let file = __dirname.substring(__dirname, __dirname.length-4) + "/public" + data.fileName;
-            console.log();            
-            console.log(file);
-            console.log();
 
             res.download(file);
         });
         
+    });
+
+    api.post('/edit', function(req,res){
+        let id = req.body.id;
+
+        pictureModel.findById(id, (err, data) => {
+            if (err) throw err;
+
+           data.origFileName = res.body.origFileName;
+           data.album = req.body.album;
+           data.tags = req.body.tags;
+
+            let picture = new pictureModel(data);
+
+            picture.save((err) => {
+                if (err) throw err;
+
+                res.redirect("/pictures/view.html");
+
+            });
+
+        });
     });
 
     return api;

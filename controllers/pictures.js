@@ -42,5 +42,15 @@ module.exports = function routes(io){
         });
     });
 
+    router.get("/edit.html:id?", (req,res) => {
+        let id = req.query.id;
+
+        pictureModel.findById(id, (err, data) => {
+            if (err) throw err;
+
+            res.render("pictures/edit", data);
+        })
+    });
+
     return router;
 }
