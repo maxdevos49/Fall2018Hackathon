@@ -1,14 +1,76 @@
+const PHOTOS_PER_PAGE = 20;
+
 class PhotoList extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      photos: props.photos,
+      page: 1
+    }
+  }
+
+  componentDidMount() {
+    var socket = io();
+    socket.on('new', (photo) => {
+      let photos = this.state.photos;
+      photos.push(photo);
+      this.setState({
+        photos: photos,
+        page: this.state.page
+      });
+    });
+  }
+
+  setPage(pageNum) {
+    this.setState({
+      photos: this.state.photos,
+      page: pageNum
+    })
+  }
+
   render() {
-    const items = this.props.photos.map((photo) => <PhotoCard photo={photo} />);
-    
+    const items = this.state.photos.slice(PHOTOS_PER_PAGE * (this.state.page - 1), PHOTOS_PER_PAGE * this.state.page).map((photo) => <PhotoCard photo={photo} />);
+
+    let paginationItems = [];
+
+    for (let i = 0; i < this.state.photos.length / PHOTOS_PER_PAGE; i++) {
+      let pageNum = i + 1;
+      paginationItems.push(
+        <li class={`page-item${this.state.page == pageNum ? ' active' : ''}`}>
+          <a class="page-link" onClick={() => this.setPage(pageNum)} href="#">
+            {pageNum}
+            {
+              this.state.page == pageNum ?
+                <span class="sr-only">(current)</span>
+              :
+                ''
+            }
+          </a>
+        </li>
+      );
+    }
+
+    let pagination = (
+      <ul class="pagination">
+        <li class={`page-item${this.state.page == 1 ? ' disabled' : ''}`}>
+          <a class="page-link" onClick={() => this.setPage(this.state.page - 1)} href="#" tabindex="-1">Previous</a>
+        </li>
+        {paginationItems}
+        <li class={`page-item${this.state.page >= this.state.photos.length / PHOTOS_PER_PAGE ? ' disabled' : ''}`}>
+          <a class="page-link" onClick={() => this.setPage(this.state.page + 1)} href="#">Next</a>
+        </li>
+      </ul>);
+
     return (
       <div class="py-5">
-          <div class="container">
-              <div class="row">
-                {items}
-              </div>
+        <div class="container">
+          {pagination}
+          <div class="row">
+            {items}
           </div>
+          {pagination}
+        </div>
       </div>
     );
   }
@@ -44,15 +106,8 @@ const Http = new XMLHttpRequest();
 const url='/api/photos';
 Http.open("GET", url);
 Http.send();
-let photos = [];
 Http.onload=(e)=>{
-  photos = JSON.parse(Http.responseText);
+  let photos = JSON.parse(Http.responseText);
 
   ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
-
-  var socket = io();
-  socket.on('new', function (photo) {
-    photos.push(photo);
-    ReactDOM.render(<PhotoList photos={photos} />,document.getElementById('root'));
-  });
 }
