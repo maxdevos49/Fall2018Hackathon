@@ -22,6 +22,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="nav-separate-line"> </div> <div class="h_line"></div>
                 <div class="navbar-nav">
                     <a class="nav-item nav-link active" href="/index.html">Home</a>
                     <a class="nav-item nav-link active" href="/pictures/view.html">View</a>
