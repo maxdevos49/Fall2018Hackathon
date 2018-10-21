@@ -1,0 +1,29 @@
+@html.extend('shared/_layout', function(model){
+
+    @html.block('content', function(model){
+
+        @{
+            model.title = "Image Details";
+        }
+        
+        <div class="col-md-10">
+          <div class="card mb-2 shadow-sm">
+
+              <img class="card-img-top" src="@model.photo.path" data-holder-rendered="true" />
+              <div class="card-body">
+                <h5 class="card-title">@model.photo.origFileName</h5>
+                <small class="text-muted">Album: @model.photo.album</small><br/>
+                <small class="text-muted">Tags:</small>
+                  @model.photo.tags.forEach((tag) => {
+                      <div class="btn-group">
+                        <div class="alert alert-secondary tags">@tag</div>
+                    </div>
+                  });
+              </div>
+          </div>
+        </div>
+    })
+
+})
+
+
