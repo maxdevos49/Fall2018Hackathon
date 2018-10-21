@@ -73,6 +73,9 @@ class Slideshow extends React.Component {
             <div class="frame" style={{cursor:'none'}}>
                 <img src={this.props.photos[slide].fileName} />
             </div>
+            <div class="pause" hidden={this.state.autoAdvance}>
+                <img src="https://png.icons8.com/ios/50/ffffff/pause-squared-filled.png" />
+            </div>
         </div>)
     }
 }
