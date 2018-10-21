@@ -3,6 +3,8 @@ module.exports = function routes(io){
     const express = require('express');
     const router = express.Router();
     const pictureModel = require('../models/pictureModel');
+    const url = require('url');  
+    const querystring = require('querystring'); 
 
     router.get("/upload.html", (req, res) => {
 
@@ -29,15 +31,14 @@ module.exports = function routes(io){
         res.render("pictures/slideShow");
     });
 
-    router.get("/singleView.html", (req, res) => {
-        let = req.query.id;
+    router.get("/singleView.html:id?", (req, res) => {
 
-        pictureModel.findById((err, data) => {
+        let id = req.query.id;
+
+        pictureModel.findById(id, (err, data) => {
             if (err) throw err;
 
-            let model = {photos: data};
-
-            res.render("pictures/singleView", model);
+            res.render("pictures/singleView", data);
         });
     });
 

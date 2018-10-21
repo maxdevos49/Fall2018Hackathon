@@ -6,7 +6,7 @@
             model.title = "404";
         }
         
-        <p>404 dude</p>
+        <p>404 dude. @model.url</p>
     })
 
 })

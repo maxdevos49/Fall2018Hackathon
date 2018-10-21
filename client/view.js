@@ -1,10 +1,12 @@
+const PHOTOS_PER_PAGE = 20;
+
 class PhotoList extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
       photos: props.photos,
-      page: 0
+      page: 1
     }
   }
 
@@ -14,21 +16,61 @@ class PhotoList extends React.Component {
       let photos = this.state.photos;
       photos.push(photo);
       this.setState({
-        photos: photos
+        photos: photos,
+        page: this.state.page
       });
     });
   }
 
+  setPage(pageNum) {
+    this.setState({
+      photos: this.state.photos,
+      page: pageNum
+    })
+  }
+
   render() {
-    const items = this.state.photos.map((photo) => <PhotoCard photo={photo} />);
+    const items = this.state.photos.slice(PHOTOS_PER_PAGE * (this.state.page - 1), PHOTOS_PER_PAGE * this.state.page).map((photo) => <PhotoCard photo={photo} />);
+
+    let paginationItems = [];
+
+    for (let i = 0; i < this.state.photos.length / PHOTOS_PER_PAGE; i++) {
+      let pageNum = i + 1;
+      paginationItems.push(
+        <li class={`page-item${this.state.page == pageNum ? ' active' : ''}`}>
+          <a class="page-link" onClick={() => this.setPage(pageNum)} href="#">
+            {pageNum}
+            {
+              this.state.page == pageNum ?
+                <span class="sr-only">(current)</span>
+              :
+                ''
+            }
+          </a>
+        </li>
+      );
+    }
+
+    let pagination = (
+      <ul class="pagination">
+        <li class={`page-item${this.state.page == 1 ? ' disabled' : ''}`}>
+          <a class="page-link" onClick={() => this.setPage(this.state.page - 1)} href="#" tabindex="-1">Previous</a>
+        </li>
+        {paginationItems}
+        <li class={`page-item${this.state.page >= this.state.photos.length / PHOTOS_PER_PAGE ? ' disabled' : ''}`}>
+          <a class="page-link" onClick={() => this.setPage(this.state.page + 1)} href="#">Next</a>
+        </li>
+      </ul>);
 
     return (
       <div class="py-5">
-          <div class="container">
-              <div class="row">
-                {items}
-              </div>
+        <div class="container">
+          {pagination}
+          <div class="row">
+            {items}
           </div>
+          {pagination}
+        </div>
       </div>
     );
   }
@@ -44,7 +86,7 @@ class PhotoCard extends React.Component {
     
     return (
       <div class="col-md-3" onClick={() =>
-        document.location.href = `/picture/singleView.html?id=${this.props.photo._id}`
+        document.location.href = `/pictures/singleView.html?id=${this.props.photo._id}`
       }>
           <div class="card mb-2 shadow-sm" style={{cursor:'pointer'}}>
               <img class="card-img-top" src={this.props.photo.fileName} data-holder-rendered="true" />
