@@ -1,5 +1,10 @@
 
 
-imageHeader {
-    background-color: rgb(150, 34, 34);
+.headerBody {
+    background-color: rgb(211, 211, 211);
+    display: inline-flex;
+}
+
+.btn{
+    margin-right: 0.25vw;
 }

@@ -16,7 +16,7 @@ const pictureModel = new Schema({
     },
     album: {
         type: String,
-        default: "default"
+        default: "General"
     },
     tag: [
         {
@@ -24,6 +24,10 @@ const pictureModel = new Schema({
             default: []
         }
     ],
+    status: {
+        type: Boolean,
+        default: true
+    },
     createdOn: {
         type: Date,
         default: Date.now()

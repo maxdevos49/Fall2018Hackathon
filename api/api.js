@@ -68,7 +68,7 @@ module.exports = function api(io){
     });
 
     api.get("/photos", (req,res) => {
-        pictureModel.find((err, data) => {
+        pictureModel.find({status: true}, (err, data) => {
             if (err) throw err;
 
             res.json(data);
@@ -76,8 +76,41 @@ module.exports = function api(io){
     });
 
 
-    api.get("/delete", (req,res) => {
+    api.get("/delete:id?", (req,res) => {
+        let id = req.query.id;
 
+        pictureModel.findById(id, (err,data) => {
+            if(err) throw err;
+
+            data.status = false;
+
+            let picture = new pictureModel(data);
+
+            picture.save((err) => {
+                if (err) throw err;
+
+                res.redirect("/pictures/view.html");
+
+            });
+
+        });
+
+    });
+
+    api.get('/download:id?', function(req, res){
+        let id = req.query.id;
+        console.log()
+        console.log(id);
+        pictureModel.findById(id, (err, data) => {
+
+            let file = __dirname.substring(__dirname, __dirname.length-4) + "/public" + data.fileName;
+            console.log();            
+            console.log(file);
+            console.log();
+
+            res.download(file);
+        });
+        
     });
 
     return api;
