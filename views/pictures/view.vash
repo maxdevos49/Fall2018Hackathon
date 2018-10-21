@@ -5,6 +5,7 @@
         @{
             model.title = "View";
         }
+        <link rel="stylesheet" href="/css/slideshow.css">
         <style>
             .tags{
                 padding: 5px 8px;
@@ -17,10 +18,11 @@
         </div>
 
 
-        <script crossorigin src="https://unpkg.com/react@@16/umd/react.development.js"></script>
-        <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react@@16/umd/react.production.min.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@@16/umd/react-dom.production.min.js"></script>
         <script src="/javascript/react-loading-image.js" crossorigin="anonymous"></script>
         <script src="/socket.io/socket.io.js" crossorigin="anonymous"></script>
+        <script src="/javascript/slideshow.js" crossorigin="anonymous"></script>
         <script src="/javascript/view.js" crossorigin="anonymous"></script>
 
     })

@@ -6,7 +6,8 @@ class PhotoList extends React.Component {
 
     this.state = {
       photos: props.photos,
-      page: 1
+      page: 1,
+      slides: false
     }
   }
 
@@ -17,7 +18,8 @@ class PhotoList extends React.Component {
       photos.push(photo);
       this.setState({
         photos: photos,
-        page: this.state.page
+        page: this.state.page,
+        slides: this.state.slides
       });
     });
   }
@@ -25,7 +27,8 @@ class PhotoList extends React.Component {
   setPage(pageNum) {
     this.setState({
       photos: this.state.photos,
-      page: pageNum
+      page: pageNum,
+      slides: this.state.slides
     })
   }
 
@@ -62,10 +65,35 @@ class PhotoList extends React.Component {
         </li>
       </ul>);
 
+    let slideshowComp = this.state.slides ?
+        <Slideshow 
+          exit={() => {this.setState({
+            photos: this.state.photos,
+            page: this.state.page,
+            slides: false
+          })}}
+          photos={this.state.photos}
+          initSlide={PHOTOS_PER_PAGE * (this.state.page - 1)}/>
+      : '';
+
     return (
       <div class="py-5">
+        {slideshowComp}
         <div class="container">
-          {pagination}
+          <div class="row">
+            <div class="col">
+              {pagination}
+            </div>
+            <div class="col">
+              <button type="button" class="btn btn-primary float-right" onClick={() => {
+                this.setState({
+                  photos: this.state.photos,
+                  page: this.state.page,
+                  slides: true
+                })
+              }}>Display Slideshow</button>
+            </div>
+          </div>
           <div class="row">
             {items}
           </div>
