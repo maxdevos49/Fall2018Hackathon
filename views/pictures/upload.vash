@@ -14,7 +14,7 @@
 
                 <div class="form-group">
                     <label>Input Images:</label>
-                    <input name="files" type="file" class="form-control" multiple required>
+                    <input name="files" type="file" class="form-control" accept=" .jpg, .gif, .png" multiple required>
                 </div>
                 <div name="album" class="form-group">
                     <label>Album:</label>

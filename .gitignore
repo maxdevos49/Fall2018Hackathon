@@ -1,6 +1,4 @@
 node_modules
-public/uploads
-public/thumbnails
 public/javascript/*
 .DS_Store
 *.c
