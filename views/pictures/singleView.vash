@@ -31,11 +31,11 @@
                                     Download
                                 </div>
                             </a>
-                            <a href="/pictures/edit.html?id=@model._id">
+                            @*<a href="/pictures/edit.html?id=@model._id">
                                 <div class="btn btn-success">
                                     Edit
                                 </div>
-                            </a>
+                            </a>*@
                             <a href="/api/delete?id=@model._id">
                                 <div class="btn btn-danger">
                                     Delete
